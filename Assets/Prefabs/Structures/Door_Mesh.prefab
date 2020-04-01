@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1438318515467264
+--- !u!1 &5145888323089084058
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4226433453338140}
-  - component: {fileID: 33563680767512234}
-  - component: {fileID: 23609148404960028}
-  - component: {fileID: 64727249520350302}
-  - component: {fileID: 1338549346}
-  m_Layer: 8
-  m_Name: PanelEm_01_snaps002
+  - component: {fileID: 8156731350722337929}
+  - component: {fileID: 894388171252950719}
+  - component: {fileID: 6869405769584613958}
+  - component: {fileID: 8327184939976038858}
+  m_Layer: 0
+  m_Name: Door_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4226433453338140
+--- !u!4 &8156731350722337929
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438318515467264}
+  m_GameObject: {fileID: 5145888323089084058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.6, y: -2.2, z: 8.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33563680767512234
+--- !u!33 &894388171252950719
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438318515467264}
-  m_Mesh: {fileID: 4300000, guid: 132002702fd6e3148a5740afb2b3bc21, type: 2}
---- !u!23 &23609148404960028
+  m_GameObject: {fileID: 5145888323089084058}
+  m_Mesh: {fileID: -5495902117074765545, guid: ec193586f8d97154c9d0c5d9a804389b, type: 3}
+--- !u!23 &6869405769584613958
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438318515467264}
+  m_GameObject: {fileID: 5145888323089084058}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,11 +56,10 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RenderingLayerMask: 4294967295
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8621dfcb3dbf229428e45425021e0875, type: 2}
-  - {fileID: 2100000, guid: 15cb6b096bb78c7479c93c6e26153387, type: 2}
+  - {fileID: 2100000, guid: c50ba36c92438ba42b11eb7bf4824450, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,8 +71,8 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 2
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -82,38 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64727249520350302
-MeshCollider:
+--- !u!65 &8327184939976038858
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438318515467264}
+  m_GameObject: {fileID: 5145888323089084058}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 132002702fd6e3148a5740afb2b3bc21, type: 2}
---- !u!114 &1338549346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438318515467264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7070d83e74a744a42971788f5b2fcf7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 0}
-  doorOffset: 2
-  duration: 2
-  holdDuration: 0
-  isLocked: 1
-  ease: 1
-  holdInteract: 0
-  multipleUse: 0
-  isInteractable: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23883393, y: 2.709199, z: 1.9180456}
+  m_Center: {x: 0, y: 1.3322556, z: 0.97317773}
