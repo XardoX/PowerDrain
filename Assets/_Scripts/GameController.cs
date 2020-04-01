@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    #region singleton
+
     public static GameController instance = null;
 
     public static GameController Instance
@@ -13,7 +15,16 @@ public class GameController : MonoBehaviour
             return instance; 
         }
     }
+    #endregion
 
+#region Variables
+    public Transform playerSpawn;
+
+    public GameObject player;
+
+    public float remainingTime;
+    public float maxTime;
+#endregion
     private void Awake() 
     {
          if (instance != null && instance != this) 
@@ -29,8 +40,14 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void NextRun(float _remainingEnergy)
+    public void NextRun()
     {
 
+    }
+
+    public void AddTime(float value)
+    {
+        remainingTime += value;
+        if(remainingTime > maxTime) remainingTime = maxTime;
     }
 }

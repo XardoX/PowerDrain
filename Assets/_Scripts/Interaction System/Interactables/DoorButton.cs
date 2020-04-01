@@ -5,39 +5,65 @@ using DG.Tweening;
 
 public class DoorButton : Interactable
 {
-        public GameObject door;
-        public float doorOffset;
-        public float duration;
-        public bool isLocked;
-        public Ease close;
-        public Ease open;
+    public GameObject door;
+    public float doorOffset;
+    public float duration;
+    public bool isLocked =true;
+    public Ease close;
+    public Ease open;
+    private Tween _openDoor,_closeDoor;
+    private bool _blockButton = false;
        
-       private float closedPos;
-       private float openPos;
-       private void Start() 
-       {
-           closedPos = door.transform.position.y;
-           openPos = door.transform.position.y + doorOffset;
-       }
+    private float closedPos;
+    private float openPos;
+    private void Start() 
+    {
+        closedPos = door.transform.position.y;
+        openPos = door.transform.position.y + doorOffset;
+        if(door != null)
+        {
+            Debug.Log("door");
+            if(isLocked)
+            {
+                return;
+            }
+            else
+            {
+                door.transform.DOMoveY(openPos, duration).SetEase(open);
+                isLocked = false;
+            }
+        }
+    }
+    private void Update() 
+    {
+        
+    }
     #region Methods
         public void ChangeDoorState()
         {
-            if(door != null)
+            if(!_blockButton)
             {
-                Debug.Log("door");
-                if(isLocked)
+                if(door != null)
                 {
-                    door.transform.DOMoveY(closedPos, duration).SetEase(close);
-                    isLocked = false;
+                    _blockButton = true;
+                    Debug.Log("door");
+                    if(isLocked)
+                    {
+                        door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(UnblockButton);
+                        isLocked = false;
+                    }
+                    else
+                    {
+                        door.transform.DOMoveY(closedPos, duration).SetEase(close).OnComplete(UnblockButton);
+                        isLocked = true;
+                    }
                 }
-                else
-                {
-                    door.transform.DOMoveY(openPos, duration).SetEase(open);
-                    isLocked = true;
-                }
-
             }
         }
+    void UnblockButton()
+    {
+        _blockButton = false;
+    }
     #endregion
 
     public override void OnInteract()
