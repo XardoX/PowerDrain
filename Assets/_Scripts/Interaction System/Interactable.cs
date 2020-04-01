@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Interactable : MonoBehaviour, IInteractable
 {
     #region Variables
@@ -21,9 +20,9 @@ public class Interactable : MonoBehaviour, IInteractable
     #endregion
 
     #region Methods
-        public void OnInteract()
+        public virtual void OnInteract()
         {
-            
+
         }
     #endregion
 }
