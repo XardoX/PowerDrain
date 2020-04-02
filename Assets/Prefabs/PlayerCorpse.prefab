@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5659569214906599186}
   - component: {fileID: 5659569214906599187}
   - component: {fileID: 3903032389143423012}
-  m_Layer: 0
+  - component: {fileID: 1522464292}
+  m_Layer: 8
   m_Name: PlayerCorpse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +107,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614b00b267ec904f9e66a263a623d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpText: Interact (E)
+  popUpText: Take Battery
   holdDuration: 0
   holdInteract: 0
   multipleUse: 0
   isInteractable: 1
   batteryValue: 20
+--- !u!114 &1522464292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659569214906599213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c9f5f4861fef148999f7614310e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: Interact (E)
+  holdDuration: 0
+  holdInteract: 0
+  multipleUse: 0
+  isInteractable: 1

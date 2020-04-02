@@ -7,6 +7,7 @@ public class Battery : Interactable
     public float batteryValue;
 
     private void Awake() {
+        popUpText = popUpText + " ("+batteryValue.ToString("F0")+ "s)";
         //if( batteryValue <= 0)
     }
     private void Start() {
@@ -15,6 +16,6 @@ public class Battery : Interactable
     public override void OnInteract()
     {
         GameController.instance.AddTime(batteryValue);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
