@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class GameController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class GameController : MonoBehaviour
 
     public float remainingTime;
     public float maxTime;
+    [Range(0f,1f)]
+    public float timePercent = 0.2f;
 
     private bool _isRunActive = true;
     #endregion
@@ -72,7 +75,7 @@ public class GameController : MonoBehaviour
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
-        lastRobot.GetComponent<Battery>().batteryValue = remainingTime;
+        lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
         player.transform.position = playerSpawn.position;
