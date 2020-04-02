@@ -28,6 +28,7 @@ public class Pickable : Interactable
 
     public void PickUpItem()
     {
+        _pickedUp = true;
         rb.isKinematic = true;
         isInteractable = false;
         transform.position = Player.instance.handPoint.position;
