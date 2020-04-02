@@ -68,8 +68,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartNextRun()
     {
-        remainingTime = maxTime;
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position, player.transform.rotation);
+        lastRobot.GetComponent<Battery>().batteryValue = remainingTime;
+        remainingTime = maxTime;
         yield return new WaitForSeconds(2f);
     }
 }

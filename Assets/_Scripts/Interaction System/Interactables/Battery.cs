@@ -9,8 +9,12 @@ public class Battery : Interactable
     private void Awake() {
         //if( batteryValue <= 0)
     }
+    private void Start() {
+        
+    }
     public override void OnInteract()
     {
         GameController.instance.AddTime(batteryValue);
+        Destroy(this);
     }
 }

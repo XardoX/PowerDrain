@@ -48,17 +48,20 @@ public class InteractionController : MonoBehaviour
             Interactable _interactable = _hitInfo.transform.GetComponent<Interactable>();
             if(_interactable != null)
             {
-                if(interactionData.IsEmpty())
+                if(_interactable.isInteractable)
                 {
-                    interactionData.InteractableObject = _interactable;
-                    UIController.instance.ShowInteractPopUp(true, _interactable.popUpText );
-                }
-                else
-                {
-                    if(!interactionData.IsSameInteractable(_interactable))
+                    if(interactionData.IsEmpty())
                     {
-                         interactionData.InteractableObject = _interactable;
-                         UIController.instance.ShowInteractPopUp(true,_interactable.popUpText);
+                        interactionData.InteractableObject = _interactable;
+                        UIController.instance.ShowInteractPopUp(true, _interactable.popUpText );
+                    }
+                    else
+                    {
+                        if(!interactionData.IsSameInteractable(_interactable))
+                        {
+                            interactionData.InteractableObject = _interactable;
+                            UIController.instance.ShowInteractPopUp(true,_interactable.popUpText);
+                        }
                     }
                 }
             }
