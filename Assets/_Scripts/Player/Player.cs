@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
    }
    private void Start() 
    {
-      GameController.instance.NextRun();
    }
 
    private void Update() 

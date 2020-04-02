@@ -20,4 +20,20 @@ public class UIController : MonoBehaviour
     #region Variables
     public TextMeshProUGUI timeLeftCounter;
     #endregion
+
+    private void Awake() 
+    {
+         if (instance != null && instance != this) 
+         {
+             Destroy(this.gameObject);
+         }
+ 
+         instance = this;
+         DontDestroyOnLoad(this.gameObject);
+    }
+    
+    public void UpdateCounter(float timeLeft)
+    {
+        timeLeftCounter.text = timeLeft.ToString("F0");
+    }
 }
