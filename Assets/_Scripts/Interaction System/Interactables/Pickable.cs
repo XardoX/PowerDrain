@@ -6,6 +6,7 @@ public class Pickable : Interactable
 {
     private bool _pickedUp;
     private Rigidbody rb;
+    private Collider coll;
 
     private void Awake() 
     {
@@ -29,6 +30,7 @@ public class Pickable : Interactable
     public void PickUpItem()
     {
         _pickedUp = true;
+        coll.enabled = false;
         rb.isKinematic = true;
         isInteractable = false;
         transform.position = Player.instance.handPoint.position;
@@ -37,9 +39,10 @@ public class Pickable : Interactable
     public void DropItem()
     {
         isInteractable = true;
-        
+        coll.enabled = true;
         rb.isKinematic = false;
         transform.parent = null;
+        _pickedUp = false;
     }
 
     public void UsePickable()
