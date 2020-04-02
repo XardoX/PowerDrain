@@ -19,6 +19,7 @@ public class UIController : MonoBehaviour
    
     #region Variables
     public TextMeshProUGUI timeLeftCounter;
+    public TextMeshProUGUI interactText;
     #endregion
 
     private void Awake() 
@@ -31,9 +32,15 @@ public class UIController : MonoBehaviour
          instance = this;
          DontDestroyOnLoad(this.gameObject);
     }
-    
+
     public void UpdateCounter(float timeLeft)
     {
         timeLeftCounter.text = timeLeft.ToString("F0");
+    }
+
+    public void ShowInteractPopUp(bool show, string t)
+    {
+        interactText.gameObject.SetActive(show);
+        interactText.text = t;
     }
 }

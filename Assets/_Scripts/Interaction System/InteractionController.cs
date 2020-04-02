@@ -51,18 +51,21 @@ public class InteractionController : MonoBehaviour
                 if(interactionData.IsEmpty())
                 {
                     interactionData.InteractableObject = _interactable;
+                    UIController.instance.ShowInteractPopUp(true, _interactable.popUpText );
                 }
                 else
                 {
                     if(!interactionData.IsSameInteractable(_interactable))
                     {
                          interactionData.InteractableObject = _interactable;
+                         UIController.instance.ShowInteractPopUp(true,_interactable.popUpText);
                     }
                 }
             }
         }
         else
         {
+            UIController.instance.ShowInteractPopUp(false, "");
             interactionData.ResetData();
         }
     }
