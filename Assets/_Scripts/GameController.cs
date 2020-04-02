@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
     public GameObject player;
     public GameObject playerCorpse;
+    public Vector3 corpseOffset;
 
     public float remainingTime;
     public float maxTime;
@@ -70,7 +71,7 @@ public class GameController : MonoBehaviour
     {
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
-        GameObject lastRobot = Instantiate(playerCorpse, player.transform.position, player.transform.rotation);
+        GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
         lastRobot.GetComponent<Battery>().batteryValue = remainingTime;
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
