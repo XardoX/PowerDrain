@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: fd35d9486e190ea41b8e24d94ff20ca4,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -23674,7 +23674,7 @@ Transform:
   m_Children:
   - {fileID: 1083037467}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &696917189
 PrefabInstance:
@@ -26639,7 +26639,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 771793673}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &773000256
+--- !u!1001 &774613547
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -26649,7 +26649,7 @@ PrefabInstance:
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 5.6328936
       objectReference: {fileID: 0}
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
@@ -26659,7 +26659,7 @@ PrefabInstance:
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
@@ -26684,7 +26684,7 @@ PrefabInstance:
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 414269138115337443, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
@@ -26706,21 +26706,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallForDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 3739287652719095536, guid: 413d3e359b2465540b91f5e299e8ebd8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739287652719095536, guid: 413d3e359b2465540b91f5e299e8ebd8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8711299961147008725, guid: 413d3e359b2465540b91f5e299e8ebd8,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4363671732889529066, guid: 463c87839102a3b4bb36ba4be2195669,
+      objectReference: {fileID: -5495902117074765545, guid: 463c87839102a3b4bb36ba4be2195669,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413d3e359b2465540b91f5e299e8ebd8, type: 3}
