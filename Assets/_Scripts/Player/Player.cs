@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
    #endregion
    public PlayerData data;
 
+   public Transform handPoint;
+
    private void Awake() 
    {
       if (instance != null && instance != this) 
