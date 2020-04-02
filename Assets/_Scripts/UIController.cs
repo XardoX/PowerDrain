@@ -19,5 +19,5 @@ public class UIController : MonoBehaviour
    
     #region Variables
     public TextMeshProUGUI timeLeftCounter;
-
+    #endregion
 }
