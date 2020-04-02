@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1863323095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863323096}
+  m_Layer: 0
+  m_Name: HandPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863323096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863323095}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.41358376, y: -0.325, z: 0.7999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2992244236295565528}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2994236047566655062
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +91,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1863323096}
   m_Father: {fileID: 2992459965777963506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -168,6 +199,8 @@ GameObject:
   - component: {fileID: 2974703797347310550}
   - component: {fileID: 2913177308751146556}
   - component: {fileID: 2890354977376069600}
+  - component: {fileID: 601854223}
+  - component: {fileID: 4336976907019720830}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -331,8 +364,8 @@ MonoBehaviour:
   enableCameraMovement: 1
   mouseInputInversion: 0
   verticalRotationRange: 170
-  mouseSensitivity: 3
-  mouseSensitivityInternal: 3
+  mouseSensitivity: 5
+  mouseSensitivityInternal: 5
   fOVToMouseSensitivity: 0.5
   cameraSmoothing: 5
   lockAndHideCursor: 1
@@ -486,3 +519,37 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fef61cddf814a2c49bf7a6c33791c766, type: 3}
     - {fileID: 8300000, guid: 73f938638097f8042ad7842aa5b04ac5, type: 3}
     - {fileID: 8300000, guid: e06c6ae1948cafd45a952ab85ebe4fa7, type: 3}
+--- !u!114 &601854223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994779825684744998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4b282c308469e4aa27242f5a4b7527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionInputData: {fileID: 11400000, guid: d7b243bdf43b586478792e791adc6d13,
+    type: 2}
+  interactionData: {fileID: 11400000, guid: 24e1ff78bb0096146809b95285bbde10, type: 2}
+  rayDistance: 1
+  raySphereRadius: 0.1
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &4336976907019720830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994779825684744998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34db81afbdfbc1498d30cd6c5ca6cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 6096b38d4045079479fda1ca28db4d97, type: 2}
+  handPoint: {fileID: 1863323096}

@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   public PlayerData data;
-   private float _energy;
-   private float _maxEnergy;
+   #region singleton
 
-   private bool _run;
+   public static Player instance = null;
+
+   public static Player Instance
+   {
+      get
+      { 
+         return instance; 
+      }
+   }
+   #endregion
+   public PlayerData data;
+
+   public Transform handPoint;
 
    private void Awake() 
    {
-      _maxEnergy = data.maxEnergy;   
+      if (instance != null && instance != this) 
+      {
+         Destroy(this.gameObject);
+      }
+      instance = this;
    }
    private void Start() 
    {
@@ -20,6 +34,6 @@ public class Player : MonoBehaviour
 
    private void Update() 
    {
-      _energy -= Time.deltaTime;
+
    }
 }
