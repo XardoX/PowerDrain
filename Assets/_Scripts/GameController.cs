@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     public float remainingTime;
     public float maxTime;
 
-    private bool _isRunActive;
+    private bool _isRunActive = true;
     #endregion
 
     private void Awake() 
@@ -68,9 +68,15 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartNextRun()
     {
+        UIController.instance.FadeToBlack(true);
+        yield return new WaitForSeconds(1f);
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position, player.transform.rotation);
         lastRobot.GetComponent<Battery>().batteryValue = remainingTime;
-        remainingTime = maxTime;
         yield return new WaitForSeconds(2f);
+        remainingTime = maxTime;
+        player.transform.position = playerSpawn.position;
+        UIController.instance.FadeToBlack(false);
+        _isRunActive = true;
+        
     }
 }

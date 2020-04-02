@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 public class UIController : MonoBehaviour
 {
     #region singleton
@@ -20,6 +21,11 @@ public class UIController : MonoBehaviour
     #region Variables
     public TextMeshProUGUI timeLeftCounter;
     public TextMeshProUGUI interactText;
+
+    [Header("Blackscreen Settings")]
+    public Image blackScreen;
+    public Ease fadeInEase, fadeOutEase;
+    public float fadeDuration;
     #endregion
 
     private void Awake() 
@@ -42,5 +48,16 @@ public class UIController : MonoBehaviour
     {
         interactText.gameObject.SetActive(show);
         interactText.text = t;
+    }
+
+    public void FadeToBlack(bool fade)
+    {
+        if(fade)
+        {
+            blackScreen.DOFade(1f, fadeDuration).SetEase(fadeInEase);
+        } else
+        {
+            blackScreen.DOFade(0f, fadeDuration).SetEase(fadeOutEase);
+        }
     }
 }

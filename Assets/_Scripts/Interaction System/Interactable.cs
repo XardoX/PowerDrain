@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour, IInteractable
     #region Variables
         [Header("Interactable Settings")]
 
-        public string popUpText = "Interact (E)";
+        public string popUpText = "Interact";
         public float holdDuration;
         [Space]
         public bool holdInteract;
