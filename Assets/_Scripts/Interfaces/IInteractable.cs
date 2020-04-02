@@ -2,6 +2,7 @@
 
 public interface IInteractable
 {
+    string PopUpText{get;}
     float HoldDuration{get;}
     bool HoldInteract {get;}
     bool MultipleUse{get;}

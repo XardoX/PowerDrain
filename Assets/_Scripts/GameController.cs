@@ -17,14 +17,18 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
-#region Variables
+    #region Variables
     public Transform playerSpawn;
 
     public GameObject player;
+    public GameObject playerCorpse;
 
     public float remainingTime;
     public float maxTime;
-#endregion
+
+    private bool _isRunActive;
+    #endregion
+
     private void Awake() 
     {
          if (instance != null && instance != this) 
@@ -33,21 +37,40 @@ public class GameController : MonoBehaviour
          }
  
          instance = this;
-         DontDestroyOnLoad( this.gameObject );
+         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start() 
+    {
+        remainingTime = maxTime;
     }
     private void Update() 
     {
-        
+        if(_isRunActive)
+        {
+            remainingTime -= Time.deltaTime;
+            UIController.instance.UpdateCounter(remainingTime);
+            if (remainingTime <= 0f)
+            {
+                _isRunActive = false;
+                remainingTime = 0;
+                StartCoroutine(StartNextRun());
+            }
+        }
     }
 
-    public void NextRun()
-    {
-
-    }
 
     public void AddTime(float value)
     {
         remainingTime += value;
         if(remainingTime > maxTime) remainingTime = maxTime;
+    }
+
+    IEnumerator StartNextRun()
+    {
+        GameObject lastRobot = Instantiate(playerCorpse, player.transform.position, player.transform.rotation);
+        lastRobot.GetComponent<Battery>().batteryValue = remainingTime;
+        remainingTime = maxTime;
+        yield return new WaitForSeconds(2f);
     }
 }
