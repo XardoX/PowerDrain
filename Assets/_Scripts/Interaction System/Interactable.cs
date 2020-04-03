@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour, IInteractable
         public float holdDuration;
         [Space]
         public bool holdInteract;
-        public bool multipleUse;
+        public bool isUsable;
         public bool isInteractable;
     #endregion
 
@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour, IInteractable
         public string PopUpText => popUpText;
         public float HoldDuration => holdDuration;
         public bool HoldInteract => holdInteract;
-        public bool MultipleUse => multipleUse;
+        public bool IsUsable => isUsable;
         public bool IsInteractable => isInteractable;
     #endregion
 
@@ -27,5 +27,14 @@ public class Interactable : MonoBehaviour, IInteractable
         {
 
         }
+
+    public virtual void OnStartUse()
+    {
+    }
+
+    public virtual void OnStopUse()
+    {
+    }
+
     #endregion
 }
