@@ -74,6 +74,7 @@ public class GameController : MonoBehaviour
     {
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
+        Player.instance.DropItem();
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
         lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
         yield return new WaitForSeconds(2f);
