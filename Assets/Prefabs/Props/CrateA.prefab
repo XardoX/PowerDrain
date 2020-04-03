@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5534016754740561705}
   - component: {fileID: 3573536304565075231}
   - component: {fileID: 7109856970145513958}
+  - component: {fileID: 532539471137094122}
   m_Layer: 0
   m_Name: CrateA
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: daff2e5cc229f2f4684aada2d699bd99, type: 2}
+  - {fileID: 2100000, guid: 3f2047cd362fd3741a0a346e3d10ef1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &532539471137094122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833704231489369402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: -0.000000029802322}
