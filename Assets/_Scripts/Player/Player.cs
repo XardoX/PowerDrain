@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -20,8 +21,10 @@ public class Player : MonoBehaviour
 
    public Transform handPoint;
    private Interactable _pickedObject;
+   private FirstPersonAIO _firstPersonAIO;
 
    private bool _pickedUp;
+   private float _playerSpeed;
 
    private void Awake() 
    {
@@ -30,6 +33,8 @@ public class Player : MonoBehaviour
          Destroy(this.gameObject);
       }
       instance = this;
+      _firstPersonAIO = gameObject.GetComponent<FirstPersonAIO>();
+      _playerSpeed = _firstPersonAIO.speed;
    }
    private void Start() 
    {
@@ -79,5 +84,18 @@ public class Player : MonoBehaviour
          _pickedUp = false;
          _pickedObject = null;
        }
+    }
+
+    public void SlowPlayer(bool slow)
+    {
+       if(slow){
+         _firstPersonAIO.speed = _playerSpeed * .75f;
+       } else _firstPersonAIO.speed = _playerSpeed;
+    }
+
+    public void StopPlayer(bool stop)
+    {
+      _firstPersonAIO.playerCanMove = stop;
+      _firstPersonAIO.enableCameraMovement = stop;
     }
 }
