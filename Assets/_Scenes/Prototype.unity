@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: popUpText
       value: Open Door
       objectReference: {fileID: 0}
+    - target: {fileID: 1338549346, guid: dfbd2a9ad7cec8b479b530f65dc65161, type: 3}
+      propertyPath: autoLocking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1438318515467264, guid: dfbd2a9ad7cec8b479b530f65dc65161, type: 3}
       propertyPath: m_Name
       value: PanelEm_01_snaps002
@@ -1728,7 +1732,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-214866
+  m_Name: pb_Mesh17100
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
