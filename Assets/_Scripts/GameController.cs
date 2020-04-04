@@ -55,14 +55,17 @@ public class GameController : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
             UIController.instance.UpdateCounter(remainingTime);
+
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(StartNextRun());
+            }
             
             if(remainingTime <= 10f)
             {
                 if (remainingTime <= 0f)
                 {
-                    _isRunActive = false;
                     remainingTime = 0;
-                    Player.instance.StopPlayer(true);
                     StartCoroutine(StartNextRun());
                 }
                 UIController.instance.BatteryWarning(true);
@@ -85,6 +88,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartNextRun()
     {
+        _isRunActive = false;
+        Player.instance.StopPlayer(true);
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
         Player.instance.DropItem();
@@ -98,4 +103,6 @@ public class GameController : MonoBehaviour
         Player.instance.StopPlayer(false);
         
     }
+
+
 }
