@@ -54,12 +54,18 @@ public class GameController : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
             UIController.instance.UpdateCounter(remainingTime);
-            if (remainingTime <= 0f)
+            if(remainingTime <= 10f)
             {
-                _isRunActive = false;
-                remainingTime = 0;
-                StartCoroutine(StartNextRun());
-            }
+                if (remainingTime <= 0f)
+                {
+                    _isRunActive = false;
+                    remainingTime = 0;
+                    Player.instance.StopPlayer(true);
+                    StartCoroutine(StartNextRun());
+                }
+                Player.instance.SlowPlayer(true);
+            } else Player.instance.SlowPlayer(false);
+            
         }
     }
 
@@ -82,6 +88,7 @@ public class GameController : MonoBehaviour
         player.transform.position = playerSpawn.position;
         UIController.instance.FadeToBlack(false);
         _isRunActive = true;
+        Player.instance.StopPlayer(false);
         
     }
 }
