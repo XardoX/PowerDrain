@@ -24,10 +24,18 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI objectiveText;
 
+
     [Header("Blackscreen Settings")]
     public Image blackScreen;
     public Ease fadeInEase, fadeOutEase;
     public float fadeDuration;
+
+    [Header("Warning Settings")]
+    public TextMeshProUGUI batteryWarning;
+    public Ease warningEase;
+    public float targetAlpha = 0.8f;
+    public float warningDuration = 1f;
+    private Tween _warningTween;
     #endregion
 
     private void Awake() 
@@ -40,6 +48,7 @@ public class UIController : MonoBehaviour
  
          instance = this;
          DontDestroyOnLoad(this.gameObject);
+         _warningTween = batteryWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void UpdateCounter(float timeLeft)
@@ -61,6 +70,20 @@ public class UIController : MonoBehaviour
         } else
         {
             blackScreen.DOFade(0f, fadeDuration).SetEase(fadeOutEase);
+        }
+    }
+
+    public void BatteryWarning(bool warning)
+    {
+        if(warning)
+        {
+            batteryWarning.enabled = true;
+            _warningTween.Play();
+        }
+        else 
+        {
+            batteryWarning.enabled = false;
+            _warningTween.Pause();
         }
     }
 }
