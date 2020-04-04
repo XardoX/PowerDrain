@@ -84,6 +84,8 @@ public class DoorButton : Interactable
     public override void OnInteract()
     {
         ChangeDoorState();
+        FindObjectOfType<AudioManager>().Play("Doors up");
+        FindObjectOfType<AudioManager>().Play("Access Granted");
     }
 
 }
