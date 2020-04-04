@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
             UIController.instance.UpdateCounter(remainingTime);
+            
             if(remainingTime <= 10f)
             {
                 if (remainingTime <= 0f)
@@ -64,8 +65,13 @@ public class GameController : MonoBehaviour
                     Player.instance.StopPlayer(true);
                     StartCoroutine(StartNextRun());
                 }
+                UIController.instance.BatteryWarning(true);
                 Player.instance.SlowPlayer(true);
-            } else Player.instance.SlowPlayer(false);
+            } else 
+            {
+                Player.instance.SlowPlayer(false);
+                UIController.instance.BatteryWarning(false);
+            }
             
         }
     }
