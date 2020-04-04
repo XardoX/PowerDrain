@@ -7,12 +7,9 @@ public class Battery : Interactable
 {
     public float batteryValue;
 
-    private void Awake() {
+    private void Start() {
         popUpText = popUpText + " ("+batteryValue.ToString("F0")+ "s)";
         //if( batteryValue <= 0)
-    }
-    private void Start() {
-        
     }
     public override void OnInteract()
     {

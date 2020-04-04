@@ -32,10 +32,12 @@ public class UIController : MonoBehaviour
 
     [Header("Warning Settings")]
     public TextMeshProUGUI batteryWarning;
+    public TextMeshProUGUI selfDestructWarning;
     public Ease warningEase;
     public float targetAlpha = 0.8f;
     public float warningDuration = 1f;
-    private Tween _warningTween;
+    private Tween _batteryWarning;
+    private Tween _destructWarning;
     #endregion
 
     private void Awake() 
@@ -48,7 +50,8 @@ public class UIController : MonoBehaviour
  
          instance = this;
          DontDestroyOnLoad(this.gameObject);
-         _warningTween = batteryWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
+         _batteryWarning = batteryWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
+         _destructWarning = selfDestructWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void UpdateCounter(float timeLeft)
@@ -78,12 +81,26 @@ public class UIController : MonoBehaviour
         if(warning)
         {
             batteryWarning.enabled = true;
-            _warningTween.Play();
+            _batteryWarning.Play();
         }
         else 
         {
             batteryWarning.enabled = false;
-            _warningTween.Pause();
+            _batteryWarning.Pause();
+        }
+    }
+
+    public void SelfDestructWarning(bool warning)
+    {
+    if(warning)
+        {
+            selfDestructWarning.enabled = true;
+            _destructWarning.Play();
+        }
+        else 
+        {
+            selfDestructWarning.enabled = false;
+            _destructWarning.Pause();
         }
     }
 }

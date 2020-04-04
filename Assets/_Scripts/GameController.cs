@@ -58,14 +58,14 @@ public class GameController : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.R))
             {
-                StartCoroutine(StartNextRun());
+                UIController.instance.SelfDestructWarning(true);
+                StartCoroutine(SelfDestruct());
             }
             
             if(remainingTime <= 10f)
             {
                 if (remainingTime <= 0f)
                 {
-                    remainingTime = 0;
                     StartCoroutine(StartNextRun());
                 }
                 UIController.instance.BatteryWarning(true);
@@ -88,13 +88,40 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartNextRun()
     {
+
         _isRunActive = false;
+        
         Player.instance.StopPlayer(true);
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
+        UIController.instance.BatteryWarning(false);
         Player.instance.DropItem();
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
         lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
+        remainingTime = 0;
+        yield return new WaitForSeconds(2f);
+        remainingTime = maxTime;
+        player.transform.position = playerSpawn.position;
+        UIController.instance.FadeToBlack(false);
+        _isRunActive = true;
+        Player.instance.StopPlayer(false);
+        Player.instance.SlowPlayer(false);
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        UIController.instance.BatteryWarning(false);
+        _isRunActive = false;
+        Player.instance.SlowPlayer(true);
+        yield return new WaitForSeconds(2f);
+        Player.instance.StopPlayer(true);
+        UIController.instance.FadeToBlack(true);
+        yield return new WaitForSeconds(1f);
+        UIController.instance.SelfDestructWarning(false);
+        Player.instance.DropItem();
+        GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
+        lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
+        remainingTime = 0;
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
         player.transform.position = playerSpawn.position;
@@ -103,6 +130,5 @@ public class GameController : MonoBehaviour
         Player.instance.StopPlayer(false);
         
     }
-
 
 }
