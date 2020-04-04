@@ -22,6 +22,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI timeLeftCounter;
     public TextMeshProUGUI interactText;
 
+    public TextMeshProUGUI objectiveText;
+
     [Header("Blackscreen Settings")]
     public Image blackScreen;
     public Ease fadeInEase, fadeOutEase;
@@ -32,6 +34,7 @@ public class UIController : MonoBehaviour
     {
          if (instance != null && instance != this) 
          {
+             Debug.Log("UI wyjebało");
              Destroy(this.gameObject);
          }
  

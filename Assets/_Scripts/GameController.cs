@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     {
          if (instance != null && instance != this) 
          {
+             Debug.Log("Game Controller wyjebało");
              Destroy(this.gameObject);
          }
  

@@ -54,10 +54,14 @@ public class DoorButton : Interactable
                         if(autoLocking)
                         {
                             door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(CloseAfterTime);
+                            AudioManager.instance.Play("Doors up");
+                            AudioManager.instance.Play("Access Granted");
                             isLocked = false;
                         }else
                         {
                             door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(UnblockButton);
+                            AudioManager.instance.Play("Doors up");
+                            AudioManager.instance.Play("Access Granted");
                             isLocked = false;
                         }
                     }
