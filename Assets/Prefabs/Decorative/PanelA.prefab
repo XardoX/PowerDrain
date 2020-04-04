@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7213445033742912120}
   - component: {fileID: 1819534192720113742}
   - component: {fileID: 5367378017042140343}
-  m_Layer: 0
+  - component: {fileID: 1121157618}
+  - component: {fileID: 1121157615}
+  m_Layer: 8
   m_Name: PanelA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5926763303628683371}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.773, y: 0.982, z: 1.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -79,3 +81,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1121157618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926763303628683371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4000001, y: 0.5, z: 0.19999991}
+  m_Center: {x: 0.000000029802322, y: 0.050000004, z: 0.09999994}
+--- !u!114 &1121157615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926763303628683371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7070d83e74a744a42971788f5b2fcf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: Open Door
+  holdDuration: 0
+  holdInteract: 0
+  isUsable: 0
+  isInteractable: 1
+  door: {fileID: 0}
+  doorOffset: 2.5
+  duration: 2
+  openTime: 2
+  isLocked: 1
+  autoLocking: 1
+  close: 1
+  open: 1

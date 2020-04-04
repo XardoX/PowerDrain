@@ -5,13 +5,15 @@ using DG.Tweening;
 
 public class DoorButton : Interactable
 {
+    [Header("Door Settings")]
     public GameObject door;
     public float doorOffset;
     public float duration;
+    public float openTime;
     public bool isLocked =true;
+    public bool autoLocking = false;
     public Ease close;
     public Ease open;
-    private Tween _openDoor,_closeDoor;
     private bool _blockButton = false;
        
     private float closedPos;
@@ -49,8 +51,15 @@ public class DoorButton : Interactable
                     Debug.Log("door");
                     if(isLocked)
                     {
-                        door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(UnblockButton);
-                        isLocked = false;
+                        if(autoLocking)
+                        {
+                            door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(CloseAfterTime);
+                            isLocked = false;
+                        }else
+                        {
+                            door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(UnblockButton);
+                            isLocked = false;
+                        }
                     }
                     else
                     {
@@ -64,6 +73,12 @@ public class DoorButton : Interactable
     {
         _blockButton = false;
     }
+    void CloseAfterTime()
+    {
+       door.transform.DOMoveY(closedPos, duration).SetEase(close).SetDelay(openTime).OnComplete(UnblockButton);
+       isLocked = true;
+    }
+
     #endregion
 
     public override void OnInteract()
