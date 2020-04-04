@@ -22,6 +22,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI timeLeftCounter;
     public TextMeshProUGUI interactText;
 
+    public TextMeshProUGUI objectiveText;
+
     [Header("Blackscreen Settings")]
     public Image blackScreen;
     public Ease fadeInEase, fadeOutEase;

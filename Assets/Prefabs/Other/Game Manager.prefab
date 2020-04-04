@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105623618036786460}
   - component: {fileID: 5669402851631167739}
+  - component: {fileID: 431217940}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -81,7 +82,22 @@ MonoBehaviour:
     type: 3}
   corpseOffset: {x: 0, y: -0.5, z: 0}
   remainingTime: 0
-  maxTime: 10
+  maxTime: 100000
+  timePercent: 0.2
+--- !u!114 &431217940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105623618036786463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab8f286adddeab4eb846c0e4bf1ea21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives:
+  - 
 --- !u!1 &1105623618678626296
 GameObject:
   m_ObjectHideFlags: 0
