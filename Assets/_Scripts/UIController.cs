@@ -34,6 +34,7 @@ public class UIController : MonoBehaviour
     {
          if (instance != null && instance != this) 
          {
+             Debug.Log("UI wyjebało");
              Destroy(this.gameObject);
          }
  

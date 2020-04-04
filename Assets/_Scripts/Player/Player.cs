@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
    {
       if (instance != null && instance != this) 
       {
+         Debug.Log("Player wyjebało");
          Destroy(this.gameObject);
       }
       instance = this;
@@ -83,6 +84,7 @@ public class Player : MonoBehaviour
          _pickedObject.isInteractable = true;
          _pickedObject.GetComponent<Collider>().enabled = true;
          _pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+         _pickedObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 100);
          _pickedObject.transform.parent = null;
          _pickedUp = false;
          _pickedObject = null;

@@ -22,6 +22,7 @@ public class ObjectiveController : MonoBehaviour
     {
          if (instance != null && instance != this) 
          {
+             Debug.Log("Objective wyjebało");
              Destroy(this.gameObject);
          }
  

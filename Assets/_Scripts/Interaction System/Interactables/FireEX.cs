@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireEX : Interactable
 {
     public ParticleSystem foamParticles;
-    public Collider coll;
+    public Collider foamColl;
     private bool _pickedUp;
 
     private bool usingItem;
@@ -24,13 +24,13 @@ public class FireEX : Interactable
     public override void OnStartUse()
     {
         foamParticles.Play();
-        coll.enabled = true;
+        foamColl.enabled = true;
     }
 
     public override void OnStopUse()
     {
         foamParticles.Stop();
-        coll.enabled = false;
+        foamColl.enabled = false;
     }
 
 }

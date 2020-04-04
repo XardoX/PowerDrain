@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
         else
         {
+            Debug.Log("audio Manager wyjebało");
             Destroy(gameObject);
             return;
         }
