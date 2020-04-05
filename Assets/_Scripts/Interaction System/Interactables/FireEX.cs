@@ -6,9 +6,6 @@ public class FireEX : Interactable
 {
     public ParticleSystem foamParticles;
     public Collider foamColl;
-    private bool _pickedUp;
-
-    private bool usingItem;
 
     private void Awake() 
     {
@@ -23,6 +20,7 @@ public class FireEX : Interactable
 
     public override void OnStartUse()
     {
+        ObjectiveController.instance.SetObjective(5);
         foamParticles.Play();
         foamColl.enabled = true;
     }
