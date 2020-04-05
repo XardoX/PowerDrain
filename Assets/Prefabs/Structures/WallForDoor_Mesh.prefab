@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8688253318053997333}
   - component: {fileID: 417118304549245219}
   - component: {fileID: 6266037086985612762}
+  - component: {fileID: 261333075}
   m_Layer: 0
   m_Name: WallForDoor_Mesh
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &261333075
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677272784726743302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4363671732889529066, guid: 956b03d78de250744b272209c178724e, type: 3}
