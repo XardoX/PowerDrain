@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Q))
             {
+                _pickedObject.OnStopUse();
                 DropItem();
             }
             if(_pickedObject.isUsable)
