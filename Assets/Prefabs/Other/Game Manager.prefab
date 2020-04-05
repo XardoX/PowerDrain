@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 1105623618036786460}
   - component: {fileID: 5669402851631167739}
   - component: {fileID: 431217940}
+  - component: {fileID: 378561917}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -78,11 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 1922883052}
   player: {fileID: 0}
-  playerCorpse: {fileID: 5659569214906599213, guid: 74e492d34f9eada4d89aa5036e35d69a,
+  playerCorpse: {fileID: 8249332105647588120, guid: 6ace00dc34c73774aaf2a04e31fbcfc3,
     type: 3}
   corpseOffset: {x: 0, y: -0.5, z: 0}
   remainingTime: 0
-  maxTime: 13
+  maxTime: 100
   timePercent: 0.2
 --- !u!114 &431217940
 MonoBehaviour:
@@ -97,8 +98,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives:
-  - objectiveText: 
-    done: 0
+  - done: 0
+    objectiveText: Find power Core
+  - done: 0
+    objectiveText: Turn on the engines
+  - done: 0
+    objectiveText: Find fire extinquisher
+  - done: 0
+    objectiveText: Put out the fire
+  - done: 0
+    objectiveText: Go to server room and download backup data
+  - done: 0
+    objectiveText: Upload data to main system
+--- !u!114 &378561917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105623618036786463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83660d1c847b9f4aa7e656d2933540e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmLights: []
 --- !u!1 &1105623618678626296
 GameObject:
   m_ObjectHideFlags: 0

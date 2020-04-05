@@ -82,18 +82,21 @@ public class UIController : MonoBehaviour
         {
             batteryWarning.enabled = true;
             _batteryWarning.Play();
+            Debug.Log("Chuj");
         }
         else 
         {
             batteryWarning.enabled = false;
             _batteryWarning.Pause();
+            Debug.Log("dupa");
         }
     }
 
     public void SelfDestructWarning(bool warning)
     {
-    if(warning)
+        if(warning)
         {
+            BatteryWarning(false);
             selfDestructWarning.enabled = true;
             _destructWarning.Play();
         }
