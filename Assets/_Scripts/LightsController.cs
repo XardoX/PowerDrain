@@ -17,7 +17,7 @@ public class LightsController : MonoBehaviour
     #endregion
 
     //[HideInInspector]
-    public List<Light> alarmLights;
+    public List<AlarmLight> alarmLights;
     private GameObject[] _alarmLights;
 
     private void Awake() 
@@ -34,16 +34,16 @@ public class LightsController : MonoBehaviour
         _alarmLights = GameObject.FindGameObjectsWithTag("AlarmLight");
         foreach (GameObject _light in _alarmLights)
         {
-            alarmLights.Add(_light.GetComponent<Light>());
+            alarmLights.Add(_light.GetComponent<AlarmLight>());
             
         }
     }
 
     public void SetAlarmLights(bool alarm)
     {
-        foreach(Light _light in alarmLights)
+        foreach(AlarmLight _light in alarmLights)
         {
-           _light.enabled = alarm;
+           _light.SetLight(alarm);
         }
     }
 }

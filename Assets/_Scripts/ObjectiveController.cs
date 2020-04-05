@@ -29,7 +29,10 @@ public class ObjectiveController : MonoBehaviour
  
          instance = this;
          DontDestroyOnLoad(this.gameObject);
-         uiController = UIController.instance;
+         
+    }
+    private void Start() {
+        uiController = UIController.instance;
     }
 
 
