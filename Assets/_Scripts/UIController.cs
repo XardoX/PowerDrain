@@ -24,10 +24,20 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI objectiveText;
 
+
     [Header("Blackscreen Settings")]
     public Image blackScreen;
     public Ease fadeInEase, fadeOutEase;
     public float fadeDuration;
+
+    [Header("Warning Settings")]
+    public TextMeshProUGUI batteryWarning;
+    public TextMeshProUGUI selfDestructWarning;
+    public Ease warningEase;
+    public float targetAlpha = 0.8f;
+    public float warningDuration = 1f;
+    private Tween _batteryWarning;
+    private Tween _destructWarning;
     #endregion
 
     private void Awake() 
@@ -40,6 +50,8 @@ public class UIController : MonoBehaviour
  
          instance = this;
          DontDestroyOnLoad(this.gameObject);
+         _batteryWarning = batteryWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
+         _destructWarning = selfDestructWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void UpdateCounter(float timeLeft)
@@ -61,6 +73,34 @@ public class UIController : MonoBehaviour
         } else
         {
             blackScreen.DOFade(0f, fadeDuration).SetEase(fadeOutEase);
+        }
+    }
+
+    public void BatteryWarning(bool warning)
+    {
+        if(warning)
+        {
+            batteryWarning.enabled = true;
+            _batteryWarning.Play();
+        }
+        else 
+        {
+            batteryWarning.enabled = false;
+            _batteryWarning.Pause();
+        }
+    }
+
+    public void SelfDestructWarning(bool warning)
+    {
+    if(warning)
+        {
+            selfDestructWarning.enabled = true;
+            _destructWarning.Play();
+        }
+        else 
+        {
+            selfDestructWarning.enabled = false;
+            _destructWarning.Pause();
         }
     }
 }

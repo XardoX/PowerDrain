@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
    {
        if(_pickedUp)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.Q))
             {
                 DropItem();
             }
@@ -103,4 +103,5 @@ public class Player : MonoBehaviour
       _firstPersonAIO.playerCanMove = !stop;
       _firstPersonAIO.enableCameraMovement = !stop;
     }
+
 }

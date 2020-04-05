@@ -55,17 +55,26 @@ public class GameController : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
             UIController.instance.UpdateCounter(remainingTime);
+
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                UIController.instance.SelfDestructWarning(true);
+                StartCoroutine(SelfDestruct());
+            }
+            
             if(remainingTime <= 10f)
             {
                 if (remainingTime <= 0f)
                 {
-                    _isRunActive = false;
-                    remainingTime = 0;
-                    Player.instance.StopPlayer(true);
                     StartCoroutine(StartNextRun());
                 }
+                UIController.instance.BatteryWarning(true);
                 Player.instance.SlowPlayer(true);
-            } else Player.instance.SlowPlayer(false);
+            } else 
+            {
+                Player.instance.SlowPlayer(false);
+                UIController.instance.BatteryWarning(false);
+            }
             
         }
     }
@@ -79,11 +88,40 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartNextRun()
     {
+
+        _isRunActive = false;
+        
+        Player.instance.StopPlayer(true);
         UIController.instance.FadeToBlack(true);
         yield return new WaitForSeconds(1f);
+        UIController.instance.BatteryWarning(false);
         Player.instance.DropItem();
         GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
         lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
+        remainingTime = 0;
+        yield return new WaitForSeconds(2f);
+        remainingTime = maxTime;
+        player.transform.position = playerSpawn.position;
+        UIController.instance.FadeToBlack(false);
+        _isRunActive = true;
+        Player.instance.StopPlayer(false);
+        Player.instance.SlowPlayer(false);
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        UIController.instance.BatteryWarning(false);
+        _isRunActive = false;
+        Player.instance.SlowPlayer(true);
+        yield return new WaitForSeconds(2f);
+        Player.instance.StopPlayer(true);
+        UIController.instance.FadeToBlack(true);
+        yield return new WaitForSeconds(1f);
+        UIController.instance.SelfDestructWarning(false);
+        Player.instance.DropItem();
+        GameObject lastRobot = Instantiate(playerCorpse, player.transform.position + corpseOffset, player.transform.rotation);
+        lastRobot.GetComponent<Battery>().batteryValue = maxTime*timePercent + remainingTime;
+        remainingTime = 0;
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
         player.transform.position = playerSpawn.position;
@@ -92,4 +130,5 @@ public class GameController : MonoBehaviour
         Player.instance.StopPlayer(false);
         
     }
+
 }
