@@ -2751,6 +2751,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[0].objectiveText
+      value: Turn on the power
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[1].objectiveText
+      value: Find power Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[2].objectiveText
+      value: Turn on the engines
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[3].objectiveText
+      value: Find fire extinquisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[4].objectiveText
+      value: Go to server room and download backup data
+      objectReference: {fileID: 0}
+    - target: {fileID: 431217940, guid: 9957d02fc2963eb4795afa624420c728, type: 3}
+      propertyPath: objectives.Array.data[5].objectiveText
+      value: Upload data to main system
+      objectReference: {fileID: 0}
     - target: {fileID: 1105623618036786460, guid: 9957d02fc2963eb4795afa624420c728,
         type: 3}
       propertyPath: m_LocalPosition.x

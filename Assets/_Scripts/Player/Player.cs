@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
             {
                 _pickedObject.OnStopUse();
                 DropItem();
+                return;
             }
             if(_pickedObject.isUsable)
             {
