@@ -34,7 +34,11 @@ public class ObjectiveController : MonoBehaviour
 
     public void SetObjective(int id)
     {
-        if(objectives[id].done == false)
+        if(id == 0 && objectives[id].done == false)
+        {
+            uiController.objectiveText.text = objectives[id].objectiveText;
+            objectives[id].done = true;
+        } else if(objectives[id].done == false && objectives[id-1].done == true)
         {
             uiController.objectiveText.text = objectives[id].objectiveText;
             objectives[id].done = true;
