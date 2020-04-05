@@ -22,6 +22,5 @@ public class AlarmLight : MonoBehaviour
         {
             material.EnableKeyword("_EMISSION");
         } else material.DisableKeyword("_EMISSION");
-        Debug.Log("alarm");
     }
 }
