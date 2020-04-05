@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
 
    public void PickUpItem(Interactable p)
     {
+       DropItem();
       _pickedObject = p;
       _pickedUp = true;
       _pickedObject.GetComponent<Collider>().enabled = false;
