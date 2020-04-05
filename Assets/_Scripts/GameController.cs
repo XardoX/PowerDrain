@@ -56,11 +56,6 @@ public class GameController : MonoBehaviour
             remainingTime -= Time.deltaTime;
             UIController.instance.UpdateCounter(remainingTime);
 
-            if(Input.GetKeyDown(KeyCode.R))
-            {
-                UIController.instance.SelfDestructWarning(true);
-                StartCoroutine(SelfDestruct());
-            }
             
             if(remainingTime <= 10f)
             {
@@ -74,6 +69,12 @@ public class GameController : MonoBehaviour
             {
                 Player.instance.SlowPlayer(false);
                 UIController.instance.BatteryWarning(false);
+            }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                UIController.instance.BatteryWarning(false);
+                UIController.instance.SelfDestructWarning(true);
+                StartCoroutine(SelfDestruct());
             }
             
         }
@@ -110,9 +111,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        UIController.instance.BatteryWarning(false);
         _isRunActive = false;
         Player.instance.SlowPlayer(true);
+        UIController.instance.BatteryWarning(false);
         yield return new WaitForSeconds(2f);
         Player.instance.StopPlayer(true);
         UIController.instance.FadeToBlack(true);
