@@ -82,13 +82,11 @@ public class UIController : MonoBehaviour
         {
             batteryWarning.enabled = true;
             _batteryWarning.Play();
-            Debug.Log("Chuj");
         }
         else 
         {
             batteryWarning.enabled = false;
             _batteryWarning.Pause();
-            Debug.Log("dupa");
         }
     }
 
