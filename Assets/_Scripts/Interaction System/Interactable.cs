@@ -30,6 +30,7 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public virtual void OnStartUse()
     {
+        
     }
 
     public virtual void OnStopUse()
