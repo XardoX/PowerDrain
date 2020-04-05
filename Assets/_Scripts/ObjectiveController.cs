@@ -16,6 +16,7 @@ public class ObjectiveController : MonoBehaviour
         }
     }
     #endregion
+    [ReorderableList]
     public Objective[] objectives;
     private UIController uiController;
     private void Awake() 
@@ -28,7 +29,10 @@ public class ObjectiveController : MonoBehaviour
  
          instance = this;
          DontDestroyOnLoad(this.gameObject);
-         uiController = UIController.instance;
+         
+    }
+    private void Start() {
+        uiController = UIController.instance;
     }
 
 
@@ -53,8 +57,8 @@ public class ObjectiveController : MonoBehaviour
 [System.Serializable]
 public class Objective 
 {
+    [ReadOnly]
+    public bool done;
     [ResizableTextArea]
     public string objectiveText;
-    [HideInInspector]
-    public bool done;
 }
