@@ -126,6 +126,7 @@ MonoBehaviour:
   - {fileID: -3138035697835294347}
   - {fileID: 2945532871488308162}
   - {fileID: -4147763038393010718}
+  - {fileID: 3662327019453008279}
 --- !u!114 &1437931924531069013
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -177,12 +178,12 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   temperature:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -100
     max: 100
   tint:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -100
     max: 100
