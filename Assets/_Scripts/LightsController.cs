@@ -35,7 +35,7 @@ public class LightsController : MonoBehaviour
         foreach (GameObject _light in _alarmLights)
         {
             alarmLights.Add(_light.GetComponent<Light>());
-            _light.transform.DORotate((new Vector3(360,0,0)), 2, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).SetLoops(-1);
+            
         }
     }
 

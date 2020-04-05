@@ -94,6 +94,19 @@ public class Player : MonoBehaviour
        }
     }
 
+    public void PutItem(Transform t)
+    {
+       if(_pickedObject != null)
+       {
+          _pickedObject.transform.parent = null;
+          _pickedObject.transform.position = t.position;
+          _pickedObject.transform.DORotate((new Vector3(360,0,0)), 2, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).SetLoops(-1);
+          _pickedObject.transform.DORotate((new Vector3(0,0,360)), 2, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).SetLoops(-1);
+          _pickedUp = false;
+         _pickedObject = null;
+      }
+    }
+
     public void SlowPlayer(bool slow)
     {
        if(slow){
