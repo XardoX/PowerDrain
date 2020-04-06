@@ -3032,11 +3032,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+<<<<<<< HEAD
+      objectReference: {fileID: 2100000, guid: d5cac0e46d566404eba0949979d52a23, type: 2}
+=======
       objectReference: {fileID: 2100000, guid: 1dea4be318584e04eaa0fd9bf150570e, type: 2}
+>>>>>>> e0c9235eab14abfe56c8a8bfa9df4ed186fa8146
     - target: {fileID: 6889770889664436209, guid: b5e4fd46ce690d84d98260bb5d861ee2,
         type: 3}
       propertyPath: m_Name
       value: PowerCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889770889664436209, guid: b5e4fd46ce690d84d98260bb5d861ee2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621845141796447714, guid: b5e4fd46ce690d84d98260bb5d861ee2,
         type: 3}
