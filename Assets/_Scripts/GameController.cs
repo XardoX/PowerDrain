@@ -143,6 +143,7 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
+        Debug.Log("restart");
         SceneManager.LoadScene("Design");
     }
 }
