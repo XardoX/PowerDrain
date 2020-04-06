@@ -296,75 +296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1216518737868994236
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.108707905
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.86412907
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.0775003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752421890847998487, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8759480262204321796, guid: d3d7aa1b68072484a89f3e89d103bd07,
-        type: 3}
-      propertyPath: m_Name
-      value: Wentylator_Mesh
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d3d7aa1b68072484a89f3e89d103bd07, type: 3}
 --- !u!1001 &6286432638834001139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -434,3 +365,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35693cf140d46714abc8c537cfea8546, type: 3}
+--- !u!1001 &6866155136758636894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.108707905
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.86412907
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.0775003
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34973077957531125, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902199806814758886, guid: 4daa496e033483543b40ba8939e68a83,
+        type: 3}
+      propertyPath: m_Name
+      value: Wentylator_Mesh
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4daa496e033483543b40ba8939e68a83, type: 3}
