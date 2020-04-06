@@ -3028,6 +3028,11 @@ PrefabInstance:
       propertyPath: isUsable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5161604639154807597, guid: b5e4fd46ce690d84d98260bb5d861ee2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dea4be318584e04eaa0fd9bf150570e, type: 2}
     - target: {fileID: 6889770889664436209, guid: b5e4fd46ce690d84d98260bb5d861ee2,
         type: 3}
       propertyPath: m_Name
