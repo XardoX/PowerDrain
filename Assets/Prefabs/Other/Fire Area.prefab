@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8682584441276257063}
   - component: {fileID: 8682584441276257056}
   - component: {fileID: 8682584441276257067}
+  - component: {fileID: 2005063655811621228}
   m_Layer: 9
   m_Name: Fire Area
   m_TagString: Untagged
@@ -4791,3 +4792,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireHealth: 100
+--- !u!65 &2005063655811621228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682584441276257057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 3}
+  m_Center: {x: 0, y: 1, z: 0}
