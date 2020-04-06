@@ -71,18 +71,12 @@ public class DoorButton : Interactable
                         isLocked = true;
                     }
                 }
-            } 
-            else 
-            {
-
             }
         }
     void UnblockButton()
     {
         _blockButton = false;
     }
-
-    void 
     void CloseAfterTime()
     {
        door.transform.DOMoveY(closedPos, duration).SetEase(close).SetDelay(openTime).OnComplete(UnblockButton);
