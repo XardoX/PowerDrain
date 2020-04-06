@@ -41,13 +41,13 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 9.142749, y: 4.563408, z: 10}
-  m_BoxOffset: {x: -0.42862558, y: 0.31557274, z: 0}
+  m_BoxSize: {x: 9.314807, y: 4.977306, z: 8.708413}
+  m_BoxOffset: {x: -1.3949265, y: 0.10862374, z: -0.25634623}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
