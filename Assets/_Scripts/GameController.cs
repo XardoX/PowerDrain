@@ -103,6 +103,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
         player.transform.position = playerSpawn.position;
+        player.transform.rotation = playerSpawn.rotation;
         UIController.instance.FadeToBlack(false);
         _isRunActive = true;
         Player.instance.StopPlayer(false);
@@ -126,6 +127,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         remainingTime = maxTime;
         player.transform.position = playerSpawn.position;
+        player.transform.rotation = playerSpawn.rotation;
         UIController.instance.FadeToBlack(false);
         _isRunActive = true;
         Player.instance.StopPlayer(false);
