@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
    private Interactable _pickedObject;
    private FirstPersonAIO _firstPersonAIO;
 
-   private bool _pickedUp;
+   public bool _pickedUp;
    private float _playerSpeed;
 
    private void Awake() 
