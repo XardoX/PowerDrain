@@ -5,7 +5,6 @@ using UnityEngine;
 public class Panel : Interactable
 {
     public List<DoorButton> doorPanels;
-
     private void Start() 
     {
     }
