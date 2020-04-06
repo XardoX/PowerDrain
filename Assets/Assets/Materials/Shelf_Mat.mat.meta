@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Assets/Materials/Shelf_Mat.mat.meta
 guid: ab6af5a781af1b046a48d98b1c2d7c2b
 NativeFormatImporter:
+=======
+guid: 39f3a6aeebb5c4e4489e56e773ace218
+PrefabImporter:
+>>>>>>> 0d51e93df0cf9f912ee908cd999c9f20b610ada6:Assets/Prefabs/Structures/Engine_Mesh.prefab.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
