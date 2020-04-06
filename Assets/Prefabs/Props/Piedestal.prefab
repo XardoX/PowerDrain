@@ -114,6 +114,7 @@ MonoBehaviour:
   isUsable: 0
   isInteractable: 1
   powerCorePosition: {fileID: 6835540815933783109}
+  door: {fileID: 0}
 --- !u!1 &7419722054020463526
 GameObject:
   m_ObjectHideFlags: 0
