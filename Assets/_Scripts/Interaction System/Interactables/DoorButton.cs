@@ -16,6 +16,10 @@ public class DoorButton : Interactable
     public bool canOpen = true;
     public Ease close;
     public Ease open;
+    public Color accessColor;
+    public Color deniedColor;
+
+    private Material _material;
     private bool _blockButton = false;
        
     private float closedPos;
@@ -24,6 +28,7 @@ public class DoorButton : Interactable
     {
         closedPos = door.transform.position.y;
         openPos = door.transform.position.y + doorOffset;
+         _material = this.GetComponent<MeshRenderer>().material;
         if(door != null)
         {
             Debug.Log("door");
@@ -36,7 +41,9 @@ public class DoorButton : Interactable
                 door.transform.DOMoveY(openPos, duration).SetEase(open);
                 isLocked = false;
             }
+
         }
+       
     }
     private void Update() 
     {
@@ -58,12 +65,14 @@ public class DoorButton : Interactable
                             door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(CloseAfterTime);
                             AudioManager.instance.Play("Doors up");
                             AudioManager.instance.Play("Access Granted");
+                            //_material.SetColor("_EmissionColor", accessColor);
                             isLocked = false;
                         }else
                         {
                             door.transform.DOMoveY(openPos, duration).SetEase(open).OnComplete(UnblockButton);
                             AudioManager.instance.Play("Doors up");
                             AudioManager.instance.Play("Access Granted");
+                           // _material.SetColor("_EmissionColor", accessColor);
                             isLocked = false;
                         }
                     }
@@ -83,6 +92,10 @@ public class DoorButton : Interactable
     public void DoorBlock(bool _isBlocked)
     {
         canOpen = !_isBlocked;
+        if(canOpen)
+        {
+            //_material.SetColor("_EmissionColor", accessColor);
+        } //else _material.SetColor("_EmissionColor", deniedColor);
     }
     void CloseAfterTime()
     {
@@ -99,8 +112,14 @@ public class DoorButton : Interactable
             ChangeDoorState();
         } else 
         {
+            //_material.SetColor("_EmissionColor", deniedColor);
+            _material.DOColor(deniedColor, "_EmissionColor", 0.5f).OnComplete(BackToNormal);
             AudioManager.instance.Play("Access Denied");
         }
     }
 
+    void BackToNormal()
+    {
+         _material.DOColor(accessColor, "_EmissionColor", 0.2f);
+    }
 }
