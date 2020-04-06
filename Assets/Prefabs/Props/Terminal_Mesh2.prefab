@@ -111,3 +111,9 @@ MonoBehaviour:
   holdInteract: 0
   isUsable: 0
   isInteractable: 1
+  doorPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
