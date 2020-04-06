@@ -10,9 +10,12 @@ public class Piedestal : Interactable
     {
         if(_isSlotFree)
         {
-            Player.instance.PutItem(powerCorePosition);
-            _isSlotFree = false;
-            isInteractable = false;
+            if(Player.instance._pickedUp)
+            {
+                Player.instance.PutItem(powerCorePosition);
+                _isSlotFree = false;
+                isInteractable = false;
+            }
         } 
     }
 }
