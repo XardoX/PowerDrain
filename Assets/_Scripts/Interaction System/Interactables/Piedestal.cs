@@ -5,6 +5,8 @@ using UnityEngine;
 public class Piedestal : Interactable
 {
     public Transform powerCorePosition;
+
+    public DoorButton door;
     private bool _isSlotFree = true;
     public override void OnInteract()
     {
@@ -15,6 +17,8 @@ public class Piedestal : Interactable
                 Player.instance.PutItem(powerCorePosition);
                 _isSlotFree = false;
                 isInteractable = false;
+                door.canOpen = true;
+                door.ChangeDoorState();
             }
         } 
     }
