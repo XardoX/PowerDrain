@@ -15,6 +15,7 @@ public class Piedestal : Interactable
             if(Player.instance._pickedUp)
             {
                 Player.instance.PutItem(powerCorePosition);
+                ObjectiveController.instance.SetObjective(2);
                 _isSlotFree = false;
                 isInteractable = false;
                 door.canOpen = true;

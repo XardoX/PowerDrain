@@ -134,4 +134,8 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void EndGame()
+    {
+        
+    }
 }

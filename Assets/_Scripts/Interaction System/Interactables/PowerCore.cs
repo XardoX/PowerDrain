@@ -7,5 +7,6 @@ public class PowerCore : Interactable
     public override void OnInteract()
     {
         Player.instance.PickUpItem(this);
+        ObjectiveController.instance.SetObjective(1);
     }
 }

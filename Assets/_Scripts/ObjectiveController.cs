@@ -19,6 +19,7 @@ public class ObjectiveController : MonoBehaviour
     [ReorderableList]
     public Objective[] objectives;
     private UIController uiController;
+    private int _servers=0;
     private void Awake() 
     {
          if (instance != null && instance != this) 
@@ -38,7 +39,7 @@ public class ObjectiveController : MonoBehaviour
 
     public void SetObjective(int id)
     {
-        if(id == 0 && objectives[id].done == false)
+        if(objectives[id].done == false)
         {
             uiController.objectiveText.text = objectives[id].objectiveText;
             objectives[id].done = true;
@@ -52,6 +53,15 @@ public class ObjectiveController : MonoBehaviour
     public void ClearObjective()
     {
         uiController.objectiveText.text = "";
+    }
+
+    public void UploadServer()
+    {
+        _servers++;
+        if(_servers >= 3)
+        {
+            SetObjective(7);
+        } else uiController.objectiveText.text = objectives[6].objectiveText +" "+_servers +"/3";
     }
 }
 [System.Serializable]

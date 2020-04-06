@@ -19,6 +19,7 @@ public class FireEX : Interactable
     public override void OnInteract()
     {
         Player.instance.PickUpItem(this);
+        ObjectiveController.instance.SetObjective(4);
     }
 
     public override void OnStartUse()
