@@ -132,9 +132,9 @@ public class GameController : MonoBehaviour
         Player.instance.StopPlayer(false);
         
     }
-
+    [Button]
     public void EndGame()
     {
-        
+        UIController.instance.ShowEndScreen();
     }
 }

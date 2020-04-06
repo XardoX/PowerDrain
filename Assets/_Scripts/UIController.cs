@@ -114,7 +114,7 @@ public class UIController : MonoBehaviour
     public void ShowEndScreen()
     {
         endScreen.SetActive(true);
-        endTimeText.text = Time.time.ToString();
+        endTimeText.text = Time.time.ToString("F2");
         Time.timeScale = 0;
     }
 }
