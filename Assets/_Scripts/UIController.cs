@@ -55,7 +55,6 @@ public class UIController : MonoBehaviour
          }
  
          instance = this;
-         DontDestroyOnLoad(this.gameObject);
          _batteryWarning = batteryWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
          _destructWarning = selfDestructWarning.DOFade(targetAlpha, warningDuration).SetLoops(-1, LoopType.Yoyo);
     }
@@ -115,6 +114,7 @@ public class UIController : MonoBehaviour
     {
         endScreen.SetActive(true);
         endTimeText.text = Time.time.ToString("F2");
-        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

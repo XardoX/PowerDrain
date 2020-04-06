@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -135,6 +136,13 @@ public class GameController : MonoBehaviour
     [Button]
     public void EndGame()
     {
+        _isRunActive = false;
+        Player.instance.StopPlayer(true);
         UIController.instance.ShowEndScreen();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Design");
     }
 }

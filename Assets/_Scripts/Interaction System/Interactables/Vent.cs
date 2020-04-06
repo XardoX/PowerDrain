@@ -7,6 +7,6 @@ public class Vent : Interactable
     public override void OnInteract()
     {
         this.GetComponent<Rigidbody>().isKinematic = false;
-        this.GetComponent<Rigidbody>().AddRelativeForce(Vector3.right * 100);
+        this.GetComponent<Rigidbody>().AddRelativeForce(Vector3.right * 150);
     }
 }
