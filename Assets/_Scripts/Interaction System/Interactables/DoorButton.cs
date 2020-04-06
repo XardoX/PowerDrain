@@ -12,6 +12,8 @@ public class DoorButton : Interactable
     public float openTime;
     public bool isLocked =true;
     public bool autoLocking = false;
+
+    public bool canOpen = true;
     public Ease close;
     public Ease open;
     private bool _blockButton = false;
@@ -77,6 +79,11 @@ public class DoorButton : Interactable
     {
         _blockButton = false;
     }
+
+    public void DoorBlock(bool _isBlocked)
+    {
+        canOpen = !_isBlocked;
+    }
     void CloseAfterTime()
     {
        door.transform.DOMoveY(closedPos, duration).SetEase(close).SetDelay(openTime).OnComplete(UnblockButton);
@@ -87,7 +94,13 @@ public class DoorButton : Interactable
 
     public override void OnInteract()
     {
-        ChangeDoorState();
+        if(canOpen)
+        {
+            ChangeDoorState();
+        } else 
+        {
+            AudioManager.instance.Play("Access Denied");
+        }
     }
 
 }
