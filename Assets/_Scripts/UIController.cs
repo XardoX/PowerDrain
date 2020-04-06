@@ -36,6 +36,12 @@ public class UIController : MonoBehaviour
     public Ease warningEase;
     public float targetAlpha = 0.8f;
     public float warningDuration = 1f;
+
+    [Header("EndGame Window")]
+    public GameObject endScreen;
+    public TextMeshProUGUI endTimeText;
+
+
     private Tween _batteryWarning;
     private Tween _destructWarning;
     #endregion
@@ -103,5 +109,12 @@ public class UIController : MonoBehaviour
             selfDestructWarning.enabled = false;
             _destructWarning.Pause();
         }
+    }
+
+    public void ShowEndScreen()
+    {
+        endScreen.SetActive(true);
+        endTimeText.text = Time.time.ToString();
+        Time.timeScale = 0;
     }
 }

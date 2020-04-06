@@ -42,7 +42,6 @@ public class GameController : MonoBehaviour
          }
  
          instance = this;
-         DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start() 

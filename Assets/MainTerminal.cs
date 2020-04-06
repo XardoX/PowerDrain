@@ -7,5 +7,6 @@ public class MainTerminal : Interactable
     public override void OnInteract()
     {
         GameController.instance.EndGame();
+        ObjectiveController.instance.ClearObjective();
     }
 }
