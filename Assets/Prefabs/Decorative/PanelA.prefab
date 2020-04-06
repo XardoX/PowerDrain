@@ -117,5 +117,8 @@ MonoBehaviour:
   openTime: 2
   isLocked: 1
   autoLocking: 1
+  canOpen: 0
   close: 1
   open: 1
+  accessColor: {r: 0.28627452, g: 0.7490196, b: 0, a: 1}
+  deniedColor: {r: 0.854902, g: 0.14901961, b: 0.21568629, a: 1}
